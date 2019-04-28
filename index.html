@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mvvm</title>
+	<script type="text/javascript" src="./src/xc-mvvm.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div xc-model="test1"></div>
+
+		<button xc-click="myclick">button</button>
+	</div>
+</body>
+
+<script type="text/javascript">
+	new XCMVVM('#app', {
+		data: {
+			test1: 'old'
+		},
+
+		methods: {
+			myclick() {
+				console.log('done...')
+				this.test1 = 'new';
+			}
+		},
+	});
+
+</script>
+</html>
